@@ -5,20 +5,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('h-entry'); ?>>
-	
-	<?php get_template_part( 'entry', 'header' ); ?>
+	<?php 
 
-	<?php if ( is_search() ) { // Only display Excerpts for Search ?>
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-	<?php }
-	else {
-	          get_template_part( 'entry', 'content' );
-	     } ?>
+		get_template_part( 'entry', 'header' ); 
+		
+		get_template_part( 'entry', 'content' );
 	
-	<?php get_template_part( 'entry', 'footer' ); ?>
-	
+		get_template_part( 'entry', 'footer' ); 
+	?>
 	<div class="comment-display">
 	<?php
            if (is_single())

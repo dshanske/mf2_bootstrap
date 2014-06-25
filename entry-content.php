@@ -1,4 +1,5 @@
 <?php
+        if (!is_search() ) { // Do not display full content on search 
         $content = "";
         $content .='<div class="entry-content e-content">';
         $content .= the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mf2_bootstrap' ) );
@@ -10,5 +11,10 @@
                                 'before' => '<div class="page-links">' . __( 'Pages:', 'mf2_bootstrap' ),
                                 'after'  => '</div>',
                         ) );
-
+	}
+	else {
+	   echo '<div class="entry-summary">';
+           the_excerpt();
+           echo '</div><!-- .entry-summary -->';
+             }
 ?>
