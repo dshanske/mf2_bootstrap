@@ -8,22 +8,14 @@
 	
 	<?php get_template_part( 'entry', 'header' ); ?>
 
-	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
+	<?php if ( is_search() ) { // Only display Excerpts for Search ?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
-	<?php else : ?>
-	<div class="entry-content e-content">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mf2_bootstrap' ) ); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'mf2_bootstrap' ),
-				'after'  => '</div>',
-			) );
-	
-		?>
-	</div><!-- .entry-content -->
-	<?php endif; ?>
+	<?php }
+	else {
+	          get_template_part( 'entry', 'content' );
+	     } ?>
 	
 	<?php get_template_part( 'entry', 'footer' ); ?>
 	

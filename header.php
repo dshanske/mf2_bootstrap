@@ -34,7 +34,7 @@
 	<?php endif; ?>
 		</div>
 	<div class="col-md-1"></div>
-	<div class="col-md-8 col-lg-8 col-xs-12 header-widget pull-left">
+	<div class="col-md-8 col-lg-8 col-xs-12 header-widget hidden-xs pull-left">
 	     <?php if ( dynamic_sidebar('headerwidget') ) : else : endif; ?>
 	</div>
 	<div class="header-social col-md-3 col-xs-6 pull-right">

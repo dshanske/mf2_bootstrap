@@ -3,8 +3,7 @@
 // Entry Footer for a Standard Format
 
 ?>
-	<?php $aftercontent=""; echo apply_filters ('after_content', $aftercontent); ?>
-        <footer class="entry-footer">
+	<footer class="entry-footer">
                 <div class="entry-meta">
                         <?php 
 				$bottom="";

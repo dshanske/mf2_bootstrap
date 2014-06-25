@@ -30,5 +30,5 @@
                         ?>
                 </div>
         </header><!-- .entry-header -->
-	<?php $beforecontent=""; echo apply_filters ('before_content', $beforecontent); ?>
+	
 

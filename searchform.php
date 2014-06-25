@@ -1,4 +1,5 @@
 <?php 
+$search_terms = "";
 if (isset($_GET['s']))
 {
    $search_terms = htmlspecialchars( $_GET["s"] ); 
