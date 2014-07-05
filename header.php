@@ -23,22 +23,18 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'mf2_bootstrap' ); ?></a>
 
 	<header id="masthead" class="site-header row" role="banner">
-		<div class="site-branding col-md-3 col-xs-4">
+		<div class="site-branding col-md-2 col-xs-3">
 		   <?php if ( get_theme_mod( 'mf2_logo' ) ) : ?>
     			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="site-logo" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 	<img class="logo" src="<?php echo get_theme_mod( 'mf2_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
 	    <?php else : ?>
 
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			<h3 class="site-description"><?php bloginfo( 'description' ); ?></h3>
 	<?php endif; ?>
 		</div>
-	<div class="col-md-1"></div>
-	<div class="col-md-8 col-lg-8 col-xs-12 header-widget hidden-xs pull-left">
+	<div class="col-md-8 col-lg-8 col-xs-12 header-widget hidden-xs hidden-sm pull-left">
 	     <?php if ( dynamic_sidebar('headerwidget') ) : else : endif; ?>
-	</div>
-	<div class="header-social col-md-3 col-xs-6 pull-right">
-                    <?php get_template_part( 'menu', 'social' ); ?>
 	</div>
 <nav class="navbar navbar-default row" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -65,10 +61,9 @@
             'walker' => new wp_bootstrap_navwalker())
         );
         ?>
-          <a href="#" class="search-button navbar-right btn btn-lg btn-primary glyphicon glyphicon-search" data-toggle="modal" data-target="#searchmodal"></a>
+	  <?php get_template_part( 'menu', 'social' ); ?>
 
     </div><!-- /.navbar-collapse --> 
-
 <div class="modal fade" id="searchmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

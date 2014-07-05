@@ -37,8 +37,11 @@ if ( post_password_required() ) {
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'mf2_bootstrap' ) ); ?></div>
 		</nav><!-- #comment-nav-above -->
 		<?php endif; // check for comment navigation ?>
-		<?php $comments_by_type = &separate_comments($comments); ?>
-              <?php if (!empty($comments_by_type['webmention'])) { ?>
+		<?php 	
+			
+			$count = webmention_count();
+                   if ($count!=0) { ?>
+		<a id="#mentions"></a>
                 <h3>Mentions</h3>
                 <?php } ?>
                 <ul class="webmention-list media-list">
@@ -53,7 +56,7 @@ if ( post_password_required() ) {
                         ?>
                 </ul><!-- .webmention-list -->
  
-		<?php if (!empty($comments_by_type['comment'])) { ?>
+		<?php if (comment_count()!=0) { ?>
                 <h3>Comments</h3>
                 <?php } ?>
 
@@ -68,7 +71,7 @@ if ( post_password_required() ) {
                         );
                         ?>
                 </ul><!-- .comment-list -->
-                <?php if (!empty($comments_by_type['pingback'])) { ?>
+                <?php if (ping_count()!=0) { ?>
                <h3>Pingbacks</h3>
                                <?php } ?>
                <ul class="ping-list media-list">

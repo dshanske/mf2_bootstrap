@@ -1,81 +1,10 @@
 <?php
 /**
- * Custom template tags for this theme.
+ * Entry meta data functions for this theme. These functions return formatted metadata
  *
- * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package mf2_bootstrap
  */
-
-if ( ! function_exists( 'mf2_bootstrap_paging_nav' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- */
-function mf2_bootstrap_paging_nav($pages = '', $range = 2) {
-
-$showitems = ($range * 2)+1;
-
-global $paged;
-if(empty($paged)) $paged = 1;
-
-if($pages == '')
-{
-global $wp_query;
-$pages = $wp_query->max_num_pages;
-if(!$pages)
-{
-$pages = 1;
-}
-}
-
-if(1 != $pages)
-{
-echo "<ul class='pagination pagination-md'>";
-if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<li><a href='".get_pagenum_link(1)."'>&laquo;</a></li>";
-if($paged > 1 && $showitems < $pages) echo "<li><a href='".get_pagenum_link($paged - 1)."'>&lsaquo;</a></li>";
-
-for ($i=1; $i <= $pages; $i++)
-{
-if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
-{
-echo ($paged == $i)? "<li class='active'><span class='current'>".$i."</span></li>":"<li><a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a></li>";
-}
-}
-
-if ($paged < $pages && $showitems < $pages) echo "<li><a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a></li>";
-if ($paged < $pages-1 && $paged+$range-1 < $pages && $showitems < $pages) echo "<li><a href='".get_pagenum_link($pages)."'>&raquo;</a></li>";
-echo "</ul>\n";
-}
-}
-
-endif;
-
-
-if ( ! function_exists( 'mf2_bootstrap_post_nav' ) ) :
-/**
- * Display navigation to next/previous post when applicable.
- */
-function mf2_bootstrap_post_nav() {
-	// Don't print empty markup if there's nowhere to navigate.
-	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-	$next     = get_adjacent_post( false, '', false );
-
-	if ( ! $next && ! $previous ) {
-		return;
-	}
-	?>
-	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'mf2_bootstrap' ); ?></h1>
-		<ul class="nav-links pager">
-			<?php
-				previous_post_link( '<li class="nav-previous previous">%link</li>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'mf2_bootstrap' ) );
-				next_post_link(     '<li class="nav-next next">%link</li>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'mf2_bootstrap' ) );
-			?>
-		</ul><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
-}
-endif;
 
 if ( ! function_exists( 'mf2_bootstrap_posted_on' ) ) :
 /**
@@ -122,7 +51,7 @@ if ( ! function_exists( 'mf2_bootstrap_posted_by_pic' ) ) :
  * Return HTML for picture for the current author.
  */
 function mf2_bootstrap_posted_by_pic() {
-        $c = sprintf( '<span class="p-author h-card"><a class="url fn n" href="%1$s" rel="author">%2$s</a></span>',
+        $c = sprintf( '<span class="p-author h-card vcard author-pic"><a class="url fn n" href="%1$s" rel="author">%2$s</a></span>',
                 esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
                 get_avatar( get_the_author_meta( 'ID' ), 48 )
         );
@@ -179,7 +108,7 @@ if ( ! function_exists( 'mf2_bootstrap_post_tags' ) ) :
  */
 function mf2_bootstrap_post_tags () {
         /* translators: used between list items, there is a space after the comma */
-        $tags_list = get_the_tag_list( '', __( ', ', 'mf2_bootstrap' ) );
+        $tags_list = get_the_tag_list( '<span class="p-category">', __( '</span> , <span class="p-category">', 'mf2_bootstrap' ), '</span>' );
 	$c = "";
         if ( $tags_list ) 
               {               	
@@ -217,13 +146,19 @@ if ( ! function_exists( 'mf2_bootstrap_comment_number' ) ) :
  */
 function mf2_bootstrap_comment_number () {
        $c = "";
-       $number = get_comments_number(); 
+       $number = comment_count(); 
        if ( ! post_password_required() && ( comments_open() && $number != '0' ) ) {
                 $c .= '<span class="comments-link">';
-		$c .= '<a title="Responses" href="' . get_comments_link() . '">' . $number . '</a>';
+		$c .= '<a title="Comments" href="' . get_comments_link() . '">' . $number . '</a>';
 		$c .= '</span>';
-
-	        }
+		$number = webmention_count();
+		if ($number != '0')
+		{
+			$c .= '<span class="mentions-link">';
+               		$c .= '<a title="Mentions" href="' . get_permalink() . '#mentions">' . $number . '</a>';
+             		$c .= '</span>';
+		}
+	 }
 		return $c;
 	}
 endif;
@@ -242,11 +177,71 @@ function mf2_bootstrap_post_format () {
 			$c .= get_post_format_string( $format ) .  '</a></span>';
         	}
 	else {
-			$c .= '<span class="entry-format"><a class="standard" href="' . home_url() . '">ARTICLE</a></span>';
+			$c .= '<span class="entry-format"><a class="standard" href="' . home_url() . '/type/standard/">ARTICLE</a></span>';
 	     }
 	return $c;
 	}
 endif;
+
+
+/**
+ * Don't count pingbacks or trackbacks when determining
+ * the number of comments on a post.
+ */
+if (!function_exists('comment_count')) :
+function comment_count( $count = "" ) {
+	global $id;
+	$comment_count = 0;
+	$comments = get_approved_comments( $id );
+	foreach ( $comments as $comment ) {
+		if ( $comment->comment_type === '' ) {
+			$comment_count++;
+		}
+	}
+	return $comment_count;
+}
+endif;
+
+/**
+ * Count webmentions
+ * 
+ */
+if (!function_exists('webmention_count')) :
+function webmention_count( $count= "" ) {
+	global $id;
+	$comment_count = 0;
+	$comments = get_approved_comments( $id );
+	foreach ( $comments as $comment ) {
+		if ( $comment->comment_type === 'webmention' ) {
+			$comment_count++;
+		}
+	}
+	return $comment_count;
+}
+endif;
+
+/**
+ * Only count pingbacks or trackbacks when determining
+ * the number of comments on a post.
+ */
+if (!function_exists('ping_count')) :
+function ping_count($count = "") {
+	global $id;
+	$comment_count = 0;
+	$comments = get_approved_comments( $id );
+	foreach ( $comments as $comment ) {
+		if (( $comment->comment_type === 'trackback' )||( $comment->comment_type === 'pingback')) {
+			$comment_count++;
+		}
+	}
+	return $comment_count;
+}
+endif;
+
+function new_excerpt_more( $more ) {
+	return '... <span class="btn btn-default read-more"> <a href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'your-text-domain') . '</a></span>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
 
 
 ?>

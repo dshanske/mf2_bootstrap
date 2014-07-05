@@ -11,11 +11,9 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer row" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'mf2_bootstrap' ) ); ?>"><?php printf( __( 'Powered by %s', 'mf2_bootstrap' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'mf2_bootstrap' ), 'mf2_bootstrap', '<a href="http://underscores.me/" rel="designer">Unknown</a>' ); ?>
-		</div><!-- .site-info -->
+	        <ul class="footer-widget">
+             <?php if ( dynamic_sidebar('footerwidget') ) : else : endif; ?>
+                </ul>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

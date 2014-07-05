@@ -12,15 +12,8 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-		 <?php // Include the post format-specific template for the content.
-			$format = get_post_format();
-			if ( false === $format ) {
-				$format = 'standard';
-			  }
-			get_template_part( 'content', $format );
-                 ?>
-
-
+		<?php get_template_part( 'content', 'single' ); ?>
+  
 			<?php mf2_bootstrap_post_nav(); ?>
 
 		<?php endwhile; // end of the loop. ?>

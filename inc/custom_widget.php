@@ -15,18 +15,18 @@ function header_widget_init() {
 }
 add_action( 'widgets_init', 'header_widget_init' );
 
-function top_widget_init() {
+function footer_widget_init() {
 
         register_sidebar( array(
-                'name' => 'Top Widget',
-                'id' => 'topwidget',
-                'before_widget' => '<div>',
-                'after_widget' => '</div>',
+                'name' => 'Footer Widget',
+                'id' => 'footerwidget',
+                'before_widget' => '<li>',
+                'after_widget' => '</li>',
                 'before_title' => '<span>',
                 'after_title' => '</span>',
         ) );
 }
-// add_action( 'widgets_init', 'top_widget_init' );
+add_action( 'widgets_init', 'footer_widget_init' );
 
 
 

@@ -8,7 +8,7 @@ if ( has_nav_menu( 'social' ) ) {
 			'theme_location'  => 'social',
 			'container'       => 'div',
 			'container_id'    => 'menu-social',
-			'container_class' => 'menu row',
+			'container_class' => 'menu row navbar-right',
 			'menu_id'         => 'menu-social-items',
 			'menu_class'      => 'menu-items',
 			'depth'           => 1,

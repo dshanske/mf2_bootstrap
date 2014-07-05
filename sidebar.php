@@ -6,7 +6,7 @@
  */
 ?>
 	<div id="secondary" class="widget-area col-xs-12 col-md-4 col-lg-3" role="complementary">
-		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
+	<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
 			<aside id="search" class="widget widget_search">
 				<?php get_search_form(); ?>

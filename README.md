@@ -7,3 +7,14 @@ areas, social media icons, and other related features.
 
 The design is continually increasing in modularity in order to make it easier
 to work with and to allow for easier child-theming.
+
+== Bootstrap ==
+
+http://getbootstrap.com/ 
+
+== Social Menu Button ==
+
+Styled for popular social and other links, based on the work of Justin Tadlock
+(http://justintadlock.com/archives/2013/08/14/social-nav-menus-part-2)
+
+

@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
- <div id="primary" class="content-area col-md-8">
+ <div id="primary" class="content-area col-md-8 col-xs-12">
                 <main id="main" class="site-main" role="main">
 
             <?php if (have_posts()) : // Results Found ?>

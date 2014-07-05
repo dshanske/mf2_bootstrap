@@ -39,7 +39,7 @@ function mf2_bootstrap_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-
+	set_post_thumbnail_size( 150, 150 );
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'top_menu' => __( 'Top Menu', 'mf2_bootstrap' ),
@@ -150,9 +150,16 @@ function mf2_extra_filter_locations()
 // require get_template_directory() . '/inc/custom-header.php';
 
 /**
- * Custom template tags for this theme.
+ * Custom entry meta functions for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/entry-meta.php';
+
+/**
+ * Custom navigation functions for this theme.
+ */
+require get_template_directory() . '/inc/navigation.php';
+
+
 
 /**
  * Custom functions that act independently of the theme templates.
@@ -185,6 +192,8 @@ require get_template_directory() . '/inc/nav-menus.php';
 /* Load Custom Functions for Specific Plugins */
 require get_template_directory() . '/inc/plugins.php';
 
+/* Load Query for Standard Post Format */
+require get_template_directory() . '/inc/query-standard-format.php';
 
 
 ?>
