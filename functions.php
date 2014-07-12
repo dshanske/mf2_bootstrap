@@ -105,7 +105,7 @@ add_action( 'widgets_init', 'mf2_bootstrap_widgets_init' );
 
 function mf2_bootstrap_scripts() {
 	// Add Genericons font, for use in the main stylesheet.
-	 wp_enqueue_style( 'genericons', '//cdn.jsdelivr.net/genericons/3.0.3/genericons.css', array(), '3.0.3' );
+	 wp_enqueue_style( 'genericons', '//cdn.jsdelivr.net/genericons/3.1/genericons.css', array(), '3.1' );
         // wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), null );
 
 	wp_enqueue_style( 'mf2_bootstrap-style', get_stylesheet_uri() );
