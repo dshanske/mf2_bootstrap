@@ -340,7 +340,7 @@ blockquote:before {
                 }
 
                         #menu-social li a::before {
-                                content:        '\f408';
+                                content:        '\f475';
                                 display:        inline-block;
                                 padding:        0 5px;
                                 font-family:    'Genericons';
@@ -349,7 +349,7 @@ blockquote:before {
 
                                 -webkit-font-smoothing: antialiased;
                         }
-  #menu-social li a[href*="facebook.com"]::before {
+ 			#menu-social li a[href*="facebook.com"]::before {
                                 content: '\f203';
                                 color:   #3b5998;
                         }
@@ -361,7 +361,7 @@ blockquote:before {
 
                         #menu-social li a[href*="twitter.com"]::before {
                                 content: '\f202';
-                                color:   #33ccff;
+                                color:   #55ACEE;
                         }
                         #menu-social li a[href*="dribbble.com"]::before {
                                 content: '\f201';
@@ -408,7 +408,19 @@ blockquote:before {
                                 content: '\f208';
                                 color:   #0e76a8;
                         }
-			#menu-social li a[href*="contact"]::before,  #menu-social li a[href*="mailto"]::before {
+			#menu-social li a[href*="skype.com"]::before, #menu-social li a[href*="skype:"]::before {
+                                content: '\f220';
+                                color:   #12A5F4;
+                        }
+                        #menu-social li a[href*="reddit.com"]::before {
+                                content: '\f222';
+       				color: #000;
+                        }
+                        #menu-social li a[href*="foursquare.com"]::before {
+                                content: '\f226';
+                                color: #000;
+                        }
+			#menu-social li a[href*="contact"]::before,  #menu-social li a[href*="mailto:"]::before {
 				content: '\f410';
 			} 
 			#menu-social li a[href*="subscribe"]::before {
