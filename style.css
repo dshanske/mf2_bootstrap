@@ -24,6 +24,11 @@ body {
     clear: both;
 }
 
+.site-footer {
+   margin-top: 20px;
+   border-top: 1px inset;
+}
+ 
 .dt-updated, .screen-reader-text { display: none; }
 
 blockquote:before {
@@ -322,7 +327,7 @@ blockquote:before {
 			margin: 2px;
                         background-color: #F8F8F8;
                         box-shadow: 0 0 5px #BBB;
-			border-radius: 5px;
+			border-radius: 3px;
                 }
                #menu-social ul li:hover {
                         background-color: #E8ECF4;
@@ -407,13 +412,3 @@ blockquote:before {
                                 content: '\f400';
 				font-weight: bold;
                         }
-
-.footer-widget ul {
-	        list-style: none;
-                margin:     5px 20px 2px 0;
-                text-align: bottom;
-}
-
-.footer-widget li {
-		display: inline-block;
-}

@@ -23,7 +23,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'mf2_bootstrap' ); ?></a>
 
 	<header id="masthead" class="site-header row" role="banner">
-		<div class="site-branding col-md-2 col-xs-3">
+		<div class="site-branding col-md-3 col-xs-4">
 		   <?php if ( get_theme_mod( 'mf2_logo' ) ) : ?>
     			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="site-logo" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 	<img class="logo" src="<?php echo get_theme_mod( 'mf2_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
@@ -81,5 +81,5 @@
 </nav>
 
 	</header><!-- #masthead -->
-
-	<div id="content" class="site-content row">
+	
+	<div id="content" class="site-content container">

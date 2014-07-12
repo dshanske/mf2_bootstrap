@@ -10,10 +10,11 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer row" role="contentinfo">
-	        <ul class="footer-widget">
-             <?php if ( dynamic_sidebar('footerwidget') ) : else : endif; ?>
-                </ul>
+	<footer id="colophon" class="site-footer container-fluid" role="contentinfo">
+		    <?php if ( dynamic_sidebar('footer-left') ) : else : endif; ?>
+	             <?php if ( dynamic_sidebar('footer-middle') ) : else : endif; ?>
+        	     <?php if ( dynamic_sidebar('footer-right') ) : else : endif; ?>
+             <?php if ( dynamic_sidebar('footer-widget') ) : else : endif; ?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
