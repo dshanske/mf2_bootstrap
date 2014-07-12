@@ -2,6 +2,10 @@
 Theme Name: mf2_bootstrap
 Layout: Content-Sidebar
 */
+
+
+/* ** 1.0 Site Elements  ** */
+
  
 .site {
      margin: 0;
@@ -14,11 +18,6 @@ body {
      margin: 0;
 }
 
-.h-entry {
-    margin-bottom: 20px;
-    border-bottom: 1px inset;
-      }
-
 .navbar {
     margin-bottom: 2px;
     clear: both;
@@ -27,9 +26,8 @@ body {
 .site-footer {
    margin-top: 20px;
    border-top: 1px inset;
+   margin-left: 20px;
 }
- 
-.dt-updated, .screen-reader-text { display: none; }
 
 blockquote:before {
   display: inline;
@@ -40,9 +38,51 @@ blockquote:before {
   vertical-align: middle;
   -webkit-font-smoothing: antialiased;
 }
- 
 
-/* Post Meta */
+.widget {
+      margin: 1px 20px 20px 5px;
+      padding: 5px;
+}
+
+.widget-title {
+      text-align: center;
+}
+
+.widget ul {
+      list-style-type: none;
+}
+
+.logo , .header-widget {
+   padding: 5px;
+   max-height: 200px;
+   max-width: 350px;
+}
+
+ 
+/* ** 2.0 Individual Entries ** */
+
+.h-entry {
+    margin-bottom: 20px;
+    border-bottom: 1px inset;
+      }
+
+.read-more {
+  display: block;
+  text-decoration: none;
+}
+
+.format-standard .e-content {
+   font-size: 1.0em;
+}
+
+.format-status .e-content {
+  margin-bottom: 30px;
+}
+
+ 
+/* ** 3.0  Post Meta **  */
+
+.dt-updated, .screen-reader-text { display: none; }
 
 .entry-title a{
     color: #000000;
@@ -93,21 +133,9 @@ blockquote:before {
     font-size: 1.3em;
 }
 
-.read-more {
-  display: block;
-  text-decoration: none;
-}
 
 .entry-meta, .entry-footer {
     font-size: 0.9em;
-}
-
-.format-standard .e-content {
-   font-size: 1.0em;
-}
-
-.format-status .e-content {
-  margin-bottom: 30px;
 }
 
 .author-pic {
@@ -260,23 +288,6 @@ blockquote:before {
   -webkit-font-smoothing: antialiased;
 }
 
-.site-footer {
-        margin-top: 10px;
-        margin-left: 20px;
-}
-
-.widget {
-      margin: 1px 20px 20px 5px;
-      padding: 5px;
-}
-
-.widget-title {
-      text-align: center;
-}
-
-.widget ul {
-      list-style-type: none;
-}
 
 .comments-link a:before {
   display: inline;
@@ -299,7 +310,6 @@ blockquote:before {
 }
 
 
-
 .form-submit {
     display: none;
 }
@@ -309,11 +319,7 @@ blockquote:before {
     width: 50%;
 }
 
-.logo , .header-widget {
-   padding: 5px;
-   max-height: 200px;
-   max-width: 350px;
-}
+/* ** 4.0 Social Menu CSS  ** */
 
   #menu-social ul {
                 list-style: none;
