@@ -1,0 +1,341 @@
+/* ** 1.0 Site Elements  ** */
+
+ 
+.site {
+     margin: 0;
+     padding: 0 15px 0;
+     width: 100%;
+}
+
+body {
+     padding: 0 0 0;
+     margin: 0;
+}
+
+img {
+     max-width; 100%; 
+     height: auto;
+    }
+
+.navbar {
+    margin-bottom: 10px;
+    margin-top: 0px;
+    padding-top: 0px;
+    clear: both;
+}
+
+.site-branding {
+  margin: 0;
+  padding: 0;
+}
+
+.site-branding img {
+  width: 100%;
+}
+
+.site-footer {
+   margin-top: 20px;
+   border-top: 1px inset;
+   margin-left: 20px;
+   padding-top: 20px;
+}
+
+blockquote:before {
+  display: inline;
+  content: '\f106';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+}
+
+#secondary {
+   margin-top: 15px;
+}
+
+.widget {
+      margin: 1px 20px 20px 5px;
+      padding: 5px;
+}
+
+.widget-title {
+      text-align: center;
+}
+
+.widget ul {
+      list-style-type: none;
+}
+
+.logo , .header-widget {
+   padding: 5px;
+   max-height: 200px;
+   max-width: 350px;
+}
+
+ 
+/* ** 2.0 Individual Entries ** */
+
+.h-entry {
+    margin-bottom: 20px;
+    border-bottom: 1px inset;
+      }
+
+.read-more {
+  display: block;
+  text-decoration: none;
+}
+
+.format-standard .e-content {
+   font-size: 1.0em;
+}
+
+.format-status .e-content {
+  margin-bottom: 30px;
+}
+
+.wp-post-image {
+ padding: 5px;
+ margin: 10px;
+}
+ 
+/* ** 3.0  Post Meta **  */
+
+.dt-updated, .screen-reader-text { display: none; }
+
+.entry-title a{
+    color: #000000;
+}
+
+.entry-title, .feed-title {
+    display: none;
+}
+
+.format-standard .entry-title, .single-format-standard .entry-title {
+    display: block;
+}
+
+.posted-on:before {
+  display: inline;
+  content: '\f303';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+.tags-links:before {
+  display: inline;
+  content: '\f302';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+.cat-links:before {
+  display: inline;
+  content: '\f301';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+.format-aside .e-content, .format-status .e-content, .format-video .e-content, .format-image .e-content, .format-gallery .e-content, .format-link .e-content {
+    font-size: 1.5em;
+}
+
+
+.entry-meta, .entry-footer {
+    font-size: 0.9em;
+}
+
+.author-pic {
+   float:left;
+   padding: 5px;
+   margin-bottom: 10px;
+   margin-right: 5px;
+}
+
+.entry-header .h-card img {
+  border-radius: 24px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+.entry-footer a, .entry-meta a, .posted-on a.entry-format {
+        color: #767676;
+        font-weight: 400;
+        font-size: 0.9em;
+        line-height: 1.3333333333;
+        text-transform: uppercase;
+        text-align: middle;
+}
+
+
+.single-format-standard .entry-footer {
+       border-top: 1px inset;
+       margin-top: 10px;
+}
+
+.entry-meta .p-author a:before, .entry-footer .p-author a:before {
+  display: inline;
+  content: '\f304';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      24px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+.entry-footer a.author-link:before, .entry-meta a.author-link:before {
+  display: inline;
+  content: '\f402';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: top;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+.entry-format a.aside:before {
+  display: inline;
+  content: '\f101';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+}
+
+.entry-format a.standard:before {
+  display: inline;
+  content: '\f100';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+}
+
+.entry-format a.image:before {
+  display: inline;
+  content: '\f102';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+}
+
+.entry-format a.gallery:before {
+  display: inline;
+  content: '\f103';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+}
+
+.entry-format a.video:before {
+  display: inline;
+  content: '\f104';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+}
+
+.entry-format a.status:before {
+  display: inline;
+  content: '\f105';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+}
+
+.entry-format a.quote:before {
+  display: inline;
+  content: '\f106';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+}
+
+.entry-format a.link:before {
+  display: inline;
+  content: '\f107';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+}
+
+.entry-format a.chat:before {
+  display: inline;
+  content: '\f108';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+}
+
+.entry-format a.audio:before {
+  display: inline;
+  content: '\f109';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.comments-link a:before {
+  display: inline;
+  content: '\f300';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mentions-link a:before {
+  display: inline;
+  content: '\f468';
+  padding:        0 5px;
+  font-family:    'Genericons';
+  font-size:      16px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.form-submit {
+    display: none;
+}
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+    width: 50%;
+}
+

@@ -14,7 +14,7 @@
 get_header(); ?>
 
      <div class="row">
-	<div id="primary" class="h-feed hfeed content-area col-md-10 col-lg-9 col-xs-12">
+	<div id="primary" class="h-feed hfeed content-area col-md-8 col-xs-12">
 		<span class="p-name feed-title">All Content</span>
 		<main id="main" class="site-main" role="main">
 
@@ -28,9 +28,9 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; ?>
-
+			<div class="text-center">
 			<?php mf2_bootstrap_paging_nav(); ?>
-
+			</div>
 		<?php else : ?>
 
 			<?php get_template_part( 'content', 'none' ); ?>

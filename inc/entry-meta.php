@@ -167,17 +167,26 @@ if ( ! function_exists( 'mf2_bootstrap_post_format' ) ) :
 /**
  * Return HTML for the post format of the current post.
  */
-function mf2_bootstrap_post_format () {
+function mf2_bootstrap_post_format ($nm = false) {
 	$c = "";
 	$format = get_post_format();
 	if (false!=$format)
 		{
 			$c .= '<span class="entry-format"><a class="' . strtolower(get_post_format_string($format)) . '" ';
 			$c .= 'href="' . get_post_format_link( $format ) . ' ">';
-			$c .= get_post_format_string( $format ) .  '</a></span>';
+			if ($nm == true)
+			   {
+			$c .= get_post_format_string( $format );
+		           } 
+			$c .= '</a></span>';
         	}
 	else {
-			$c .= '<span class="entry-format"><a class="standard" href="' . home_url() . '/type/standard/">ARTICLE</a></span>';
+			$c .= '<span class="entry-format"><a class="standard" href="' . home_url() . '/type/standard/">';
+			if ($nm == true)
+			   {
+				$c .= 'ARTICLE';
+			   }
+			$c .= '</a></span>';
 	     }
 	return $c;
 	}

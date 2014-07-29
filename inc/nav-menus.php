@@ -1,5 +1,12 @@
 <?php
 
+if (!function_exists('navbar_class') ) {
+  function navbar_class()
+    {
+	echo '';
+    }
+}
+
 add_action( 'init', 'social_register_nav_menus' );
 
 function social_register_nav_menus() {

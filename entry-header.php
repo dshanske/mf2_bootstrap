@@ -21,7 +21,7 @@
 					$top .= mf2_bootstrap_comment_number();
                                		$top .= mf2_bootstrap_posted_on();
                              		$top .= mf2_bootstrap_posted_by();
-					// $top .= mf2_bootstrap_post_format();
+					$top .= mf2_bootstrap_post_format();
 					if (!is_single())
 					     {
                                        		$top .= mf2_bootstrap_post_categories();

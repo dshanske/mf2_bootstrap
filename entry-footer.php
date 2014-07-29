@@ -24,7 +24,7 @@
                                                 $bottom .= mf2_bootstrap_posted_on();
                                                 $bottom .= mf2_bootstrap_posted_by();
 						$bottom .= mf2_bootstrap_post_tags();
-                                                // $bottom .= mf2_bootstrap_post_format();
+                                                $bottom .= mf2_bootstrap_post_format();
                                      }
 				if (is_single())
 				    { 

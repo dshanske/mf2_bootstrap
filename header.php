@@ -19,12 +19,18 @@
 </head>
 
 <body <?php body_class("container-fluid" ); ?>>
-<div id="page" class="site">
+<div id="page" class="site row">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'mf2_bootstrap' ); ?></a>
 
 	<header id="masthead" class="site-header row" role="banner">
-		<div class="site-branding col-md-3 col-xs-4">
-		   <?php if ( get_theme_mod( 'mf2_logo' ) ) : ?>
+		<div class="site-branding">
+		    <?php if ( get_header_image() ) { ?>
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                        <img src="<?php header_image(); ?>" class="aligncenter col-md-12" alt=""></a>
+                 <?php } // End header image check. 
+		   else if ( get_theme_mod( 'mf2_logo' ) ) : ?>
+			<div class="col-md-3 col-xs-4">
+
     			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="site-logo" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 	<img class="logo" src="<?php echo get_theme_mod( 'mf2_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
 	    <?php else : ?>
@@ -33,10 +39,11 @@
 			<h3 class="site-description"><?php bloginfo( 'description' ); ?></h3>
 	<?php endif; ?>
 		</div>
+		</div>
 	<div class="col-md-8 col-lg-8 col-xs-12 header-widget hidden-xs hidden-sm pull-left">
 	     <?php if ( dynamic_sidebar('headerwidget') ) : else : endif; ?>
 	</div>
-<nav class="navbar navbar-default row" role="navigation">
+<nav class="navbar navbar-default <?php navbar_class(); ?> row" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
     <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo ('name' ); ?></a>

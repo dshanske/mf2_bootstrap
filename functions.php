@@ -108,8 +108,6 @@ function mf2_bootstrap_scripts() {
 	// wp_enqueue_style( 'genericons', '//cdn.jsdelivr.net/genericons/3.1/genericons.css', array(), '3.1' );
            wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), null );
 
-	wp_enqueue_style( 'mf2_bootstrap-style', get_stylesheet_uri() );
-
 	wp_enqueue_script( 'mf2_bootstrap-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'mf2_bootstrap-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
@@ -139,15 +137,21 @@ function mf2_bootstrap_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'mf2_bootstrap_scripts' );
 
-// The Pure Function of Below Function is to check whether it exists to indicate certain filter locations exist
-function mf2_extra_filter_locations()
-  { 
-  }
+if (!function_exists('mf2_bootstrap_styles') ) {
+  function mf2_bootstrap_styles()
+    {
+       wp_enqueue_style( 'mf2_bootstrap-style', get_template_directory_uri() . '/css/mf2_bootstrap.css' );
+       wp_enqueue_style( 'menu-social-style', get_template_directory_uri() . '/css/menu-social.css' );
+
+    }
+add_action( 'wp_enqueue_scripts', 'mf2_bootstrap_styles' );
+}
+
 
 /**
  * Implement the Custom Header feature.
  */
-// require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom entry meta functions for this theme.
