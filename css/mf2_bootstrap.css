@@ -22,11 +22,13 @@ img {
     margin-top: 0px;
     padding-top: 0px;
     clear: both;
+    padding-bottom: 0px;
 }
 
-.site-branding {
+.site-branding img {
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .site-branding img {
@@ -169,6 +171,8 @@ blockquote:before {
   box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  margin: 0;
+  padding: 0;
 }
 
 .entry-footer a, .entry-meta a, .posted-on a.entry-format {
