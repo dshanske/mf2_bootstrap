@@ -40,9 +40,11 @@
 	<?php endif; ?>
 		</div>
 		</div>
+        <?php if (! get_header_image() ) { ?>
 	<div class="col-md-8 col-lg-8 col-xs-12 header-widget hidden-xs hidden-sm pull-left">
 	     <?php if ( dynamic_sidebar('headerwidget') ) : else : endif; ?>
 	</div>
+	<?php } ?>
 <nav class="navbar navbar-default <?php navbar_class(); ?> row" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">

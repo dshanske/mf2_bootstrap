@@ -14,4 +14,10 @@ function indieweb_taxonomy_display($content)
 endif;
 
 
+// Automatically add the bootstrap responsive class to images inserted
+function my_image_class_filter($classes) {
+	return $classes . ' img-responsive';
+}
+add_filter('get_image_tag_class', 'my_image_class_filter');
+
 ?>

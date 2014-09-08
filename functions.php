@@ -111,8 +111,6 @@ function mf2_bootstrap_scripts() {
 	wp_enqueue_script( 'mf2_bootstrap-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'mf2_bootstrap-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-	// Add Alternate Font     
-	//	wp_enqueue_style( 'HammersmithOne', "http://fonts.googleapis.com/css?family=Hammersmith+One" );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -120,13 +118,13 @@ function mf2_bootstrap_scripts() {
 	}
 	// Add bootstrap support
 // CDN Bootstrap
-        wp_register_script( 'bootstrap-js', "//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", array('jquery'), null, true);
+  //      wp_register_script( 'bootstrap-js', "//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", array('jquery'), null, true);
 
-//     wp_register_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '3.1.1', true );
+     wp_register_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '3.1.1', true );
         // CDN Bootstrap
-        wp_register_style( 'bootstrap-css', "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" );
+   //     wp_register_style( 'bootstrap-css', "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" );
 
-//     wp_register_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.1.1', 'all' );
+     wp_register_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.1.1', 'all' );
 
      wp_enqueue_script( 'bootstrap-js' );
 

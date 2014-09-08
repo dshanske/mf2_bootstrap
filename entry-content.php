@@ -2,7 +2,7 @@
         if (!has_post_format('standard')&&!is_search() ) {
         $entrycontent = "";
         $entrycontent .='<div class="entry-content e-content" itemprop="description articleBody">';
-        $entrycontent .= get_the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mf2_bootstrap' ) );
+       $entrycontent .= apply_filters( 'the_content', get_the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mf2_bootstrap' ) )); 
 	$entrycontent .= '</div><!-- .entry-content -->';
 	// entry_content allows data to be inserted above/below the content
 	echo apply_filters ('entry_content', $entrycontent);
