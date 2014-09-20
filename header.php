@@ -25,26 +25,25 @@
 	<header id="masthead" class="site-header row" role="banner">
 		<div class="site-branding">
 		    <?php if ( get_header_image() ) { ?>
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                        <img src="<?php header_image(); ?>" class="aligncenter col-md-12" alt=""></a>
-                 <?php } // End header image check. 
-		   else if ( get_theme_mod( 'mf2_logo' ) ) : ?>
-			<div class="col-md-3 col-xs-4">
-
-    			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="site-logo" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-	<img class="logo" src="<?php echo get_theme_mod( 'mf2_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
-	    <?php else : ?>
-
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h3 class="site-description"><?php bloginfo( 'description' ); ?></h3>
-	<?php endif; ?>
-		</div>
-		</div>
-        <?php if (! get_header_image() ) { ?>
-	<div class="col-md-8 col-lg-8 col-xs-12 header-widget hidden-xs hidden-sm pull-left">
-	     <?php if ( dynamic_sidebar('headerwidget') ) : else : endif; ?>
-	</div>
-	<?php } ?>
+                        	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                        	<img src="<?php header_image(); ?>" class="aligncenter col-md-12" alt=""></a>
+                     <?php } // End header image check. 
+	            else {
+		           if ( get_theme_mod( 'mf2_logo' ) ) { ?> // if Logo Display
+				<div class="col-md-3 col-xs-4">
+    					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="site-logo" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<img class="logo" src="<?php echo get_theme_mod( 'mf2_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+				} // end if logo display		    
+			   else { ?> if no logo and no header
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h3 class="site-description"><?php bloginfo( 'description' ); ?></h3>
+			      <?php  } ?>
+			    </div>
+			<div class="col-md-8 col-lg-8 col-xs-12 header-widget hidden-xs hidden-sm pull-left">
+	     			<?php if ( dynamic_sidebar('headerwidget') ) : else : endif; ?>
+			</div>
+		  <?php } ?>
+		</div> <?php // end site-branding? ?>
 <nav class="navbar navbar-default <?php navbar_class(); ?> row" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -73,7 +72,7 @@
 	  <?php get_template_part( 'menu', 'social' ); ?>
 
     </div><!-- /.navbar-collapse --> 
-<div class="modal fade" id="searchmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+<div class="modal fade" id="searchmodal" tabindex="-1" role="dialog" aria-labelledby="searchmodal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
