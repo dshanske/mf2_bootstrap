@@ -91,11 +91,11 @@ blockquote:before {
   text-decoration: none;
 }
 
-.format-standard .e-content {
+.format-standard .e-content, .kind-article .e-content {
    font-size: 1.0em;
 }
 
-.format-status .e-content {
+.format-status .e-content, .kind-note .e-content {
   margin-bottom: 30px;
 }
 
@@ -112,11 +112,15 @@ blockquote:before {
     color: #000000;
 }
 
-.entry-title, .feed-title {
+.kind-note .entry-title, .kind-reply .entry-title, .kind-repost .entry-title, .kind-bookmark .entry-title, .kind-rsvp entry-title, 
+.kind-like .entry-title, .kind-favorite .entry-title, .kind-tag .entry-title, .kind-photo .entry-title, kind-video .entry-title, 
+.format-aside .entry-title, .format-status .entry-title, .feed-title, .format-image .entry-title, .single-format-aside .entry-title,
+.single-format-image .entry-title
+ {
     display: none;
 }
 
-.format-standard .entry-title, .single-format-standard .entry-title {
+.entry-title {
     display: block;
 }
 
@@ -153,7 +157,7 @@ blockquote:before {
 
 }
 
-.format-aside .e-content, .format-status .e-content, .format-video .e-content, .format-image .e-content, .format-gallery .e-content, .format-link .e-content {
+.format-aside .e-content, .format-status .e-content, .format-video .e-content, .format-image .e-content, .format-gallery .e-content, .format-link .e-content, .kind-note .e-content, .kind-reply .e-content, .kind-favorite .e-content, .kind-like .e-content, .kind-bookmark .e-content {
     font-size: 1.5em;
 }
 

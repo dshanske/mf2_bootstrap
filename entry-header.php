@@ -5,19 +5,30 @@
 
         <header class="entry-header">
                 <?php 
-			$format = get_post_format();
-			if ($format==false) {	$format = 'standard'; }
+			if (function_exists ( 'get_post_kind'))
+			    {
+				$kind = get_post_kind($post->ID);
+			    }
+			else {
+				if(!get_post_format())
+				   {
+					$kind = 'article';
+				   }
+				else {
+					$kind = 'aside';
+			   	     }
+			     }
 			the_title( sprintf( '<h1 class="p-name entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' );
 				
-			if ($format==='status') { echo mf2_bootstrap_posted_by_pic(); }
-			else if ((has_post_thumbnail()) && ($format === 'standard') ) {	the_post_thumbnail('thumbnail', array('class' => 'thumbnail pull-left')); } 
+			if ($kind==='note') { echo mf2_bootstrap_posted_by_pic(); }
+			else if ((has_post_thumbnail()) && ($kind === 'article') ) {	the_post_thumbnail('thumbnail', array('class' => 'thumbnail pull-left')); } 
 
 			 ?>
                 <div class="entry-meta">
                         <?php
 				$top = "";
-				switch ($format) {
-				   case 'standard':
+				switch ($kind) {
+				   case 'article':
 					$top .= mf2_bootstrap_comment_number();
                                		$top .= mf2_bootstrap_posted_on();
                              		$top .= mf2_bootstrap_posted_by();
